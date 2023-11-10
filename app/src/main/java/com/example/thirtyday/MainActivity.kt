@@ -4,12 +4,17 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.thirtyday.data.foods
 import com.example.thirtyday.ui.theme.ThirtyDayTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    FoodApp()
                 }
             }
         }
@@ -30,17 +35,27 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun FoodApp(){
+    Scaffold(
+        topbar = {
+            FoodTopAppBar()
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ThirtyDayTheme {
-        Greeting("Android")
+        }
+    ){ it ->
+        LazyColumn(contentPadding = it){
+            items(foods){
+                FoodItem(
+                    food = it,
+                    modifier = Modifier.padding(dimensionResource(R.dimen.padding_small)),
+                )
+            }
+        }
     }
 }
+@Composable
+fun FoodTopAppBar(modifier: Modifier = Modifier){
+
+}
+
+@Composable
+fun FoodItem(){}
