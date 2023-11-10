@@ -109,7 +109,7 @@ fun FoodIcon(
                 .padding(dimensionResource(R.dimen.padding_small)),
             painter = painterResource(id = foodIcon),
             contentDescription = null,
-            contentScale = ContentScale.FillWidth
+            contentScale = ContentScale.FillWidth,
         )
 }
 
