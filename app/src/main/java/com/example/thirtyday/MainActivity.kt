@@ -3,9 +3,15 @@ package com.example.thirtyday
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -14,6 +20,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.example.thirtyday.data.Food
 import com.example.thirtyday.data.foods
 import com.example.thirtyday.ui.theme.ThirtyDayTheme
 
@@ -36,13 +44,12 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun FoodApp(){
-    Scaffold(
-        topbar = {
+    Scaffold (
+        topBar = {
             FoodTopAppBar()
-
         }
-    ){ it ->
-        LazyColumn(contentPadding = it){
+    ){it ->
+        LazyColumn(contentPadding = it)
             items(foods){
                 FoodItem(
                     food = it,
@@ -54,8 +61,36 @@ fun FoodApp(){
 }
 @Composable
 fun FoodTopAppBar(modifier: Modifier = Modifier){
+  Text(
+      text = "30 day of recipes",
+      style = MaterialTheme.typography.displayLarge
+  )
+}
+
+@Composable
+fun FoodItem(
+    food: Food,
+    modifier: Modifier = Modifier
+){
+    Card(modifier = modifier){
+        Box(modifier = modifier
+            .fillMaxSize()){
+            Column(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(dimensionResource(R.dimen.padding_small))
+            ){
+                FoodIcon(food.imageResourceId)
+                Spacer(Modifier.height(16.dp))
+                FoodInformation(food.name,food.description)
+            }
+        }
+    }
+}
+@Composable
+fun FoodIcon(){
 
 }
 
 @Composable
-fun FoodItem(){}
+fun FoodInformation(){}
