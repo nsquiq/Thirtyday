@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">ThirtyDay</string>
+    <string name="food1">Spaghetti Bolognese</string>
+    <string name="food2">Chicken Curry</string>
+    <string name="food3">Caprese Salad</string>
+    <string name="food4">Sushi Rolls</string>
+    <string name="food5">Chicken Alfredo Pasta</string>
+    <string name="food6">Guacamole</string>
+    <string name="food7">Classic Margherita Pizza</string>
+    <string name="food8">Chicken Fajitas</string>
+    <string name="food9">Shrimp Scampi</string>
+    <string name="food10">Hummus</string>
+    <string name="description1">Brown ground beef, sauté onions and garlic, add tomato sauce and Italian herbs. Serve over cooked spaghetti.</string>
+    <string name="description2">Sauté chicken, onions, garlic, and ginger. Add curry spices and coconut milk. Simmer until chicken is cooked.</string>
+    <string name="description3">Slice tomatoes and fresh mozzarella. Arrange on a plate with fresh basil leaves. Drizzle with balsamic glaze.</string>
+    <string name="description4">Spread sushi rice on nori, add fish, avocado, and cucumber. Roll tightly and slice into pieces.</string>
+    <string name="description5">Cook chicken, prepare fettuccine pasta, and mix with Alfredo sauce. Top with grated Parmesan cheese.</string>
+    <string name="description6">Mash avocados, dice tomatoes, onions, and cilantro. Mix with lime juice and salt.</string>
+    <string name="description7">Roll out pizza dough, spread tomato sauce, add fresh mozzarella, and bake. Top with fresh basil.</string>
+    <string name="description8">Sauté chicken strips with bell peppers and onions. Season with fajita spices. Serve in tortillas.</string>
+    <string name="description9">Sauté shrimp, garlic, and lemon in white wine. Serve over linguine.</string>
+    <string name="description10">Blend chickpeas, tahini, garlic, and lemon juice until smooth. Serve with pita bread.</string>
+
+
+
 </resources>
